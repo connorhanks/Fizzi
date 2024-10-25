@@ -61,11 +61,14 @@ export default function Scene({}: Props) {
       },
     });
 
-    introTl
-      .from(can1GroupRef.current.position, { y: -5, x: 1 }, 0)
-      .from(can1GroupRef.current.rotation, { z: 3 }, 0)
-      .from(can2GroupRef.current.position, { y: 5, x: -1 }, 0)
-      .from(can2GroupRef.current.rotation, { z: 3 }, 0);
+    // Only animate the intro if the user has scrolled down
+    if (window.scrollY < 20) {
+      introTl
+        .from(can1GroupRef.current.position, { y: -5, x: 1 }, 0)
+        .from(can1GroupRef.current.rotation, { z: 3 }, 0)
+        .from(can2GroupRef.current.position, { y: 5, x: -1 }, 0)
+        .from(can2GroupRef.current.rotation, { z: 3 }, 0);
+    }
 
     const scrollTl = gsap.timeline({
       defaults: {
