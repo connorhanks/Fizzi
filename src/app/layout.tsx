@@ -20,6 +20,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log("Rendering RootLayout component");
   return (
     <html lang="en" className={alpino.variable}>
       <body className="overflow-x-hidden bg-yellow-300">

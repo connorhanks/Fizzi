@@ -1,13 +1,14 @@
 // Only run on client
 "use client";
 
+import { Environment, View } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { SodaCan } from "./SodaCan";
-import { Environment, Float } from "@react-three/drei";
+import FloatingCan from "@/components/FloatingCan";
 
 type Props = {};
 
 export default function ViewCanvas({}: Props) {
+  console.log("Rendering ViewCanvas component");
   return (
     <Canvas
       style={{
@@ -26,10 +27,7 @@ export default function ViewCanvas({}: Props) {
         fov: 30,
       }}
     >
-      <Float>
-        <SodaCan />
-      </Float>
-      <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
+      <View.Port />
     </Canvas>
   );
 }
