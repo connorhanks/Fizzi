@@ -1,9 +1,8 @@
 // Only run on client
 "use client";
 
-import { Environment, View } from "@react-three/drei";
+import { View } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import FloatingCan from "@/components/FloatingCan";
 
 type Props = {};
 
