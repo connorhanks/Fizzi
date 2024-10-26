@@ -1,12 +1,6 @@
 "use client";
 
-import {
-  Text,
-  Cloud,
-  Clouds,
-  Environment,
-  OrbitControls,
-} from "@react-three/drei";
+import { Text, Cloud, Clouds, Environment } from "@react-three/drei";
 import { useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
@@ -119,6 +113,30 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
       delay: DURATION / 2,
       duration: DURATION,
     });
+
+    const scrollT1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".skydive",
+        pin: true,
+        start: "top top",
+        end: "+=2000%",
+        scrub: 1.5,
+      },
+    });
+
+    scrollT1
+      .to("body", {
+        backgroundColor: "#C0F0F5",
+        overwrite: "auto",
+        duration: 0.1,
+      })
+      .to(cloudsRef.current.position, { z: 0, duration: 0.3 }, 0)
+      .to(canRef.current.position, {
+        x: 0,
+        y: 0,
+        duration: 0.3,
+        ease: "back.out(1.7)",
+      });
   });
 
   return (
@@ -145,8 +163,6 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
         {/* Check if there is a sentence before attempting to render it */}
         {sentence && <ThreeText sentence={sentence} color="#F97315" />}
       </group>
-
-      <OrbitControls />
 
       {/* Lighting */}
       <ambientLight intensity={2} color="#9BDEFA" />
