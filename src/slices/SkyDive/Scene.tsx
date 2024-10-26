@@ -125,18 +125,36 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
     });
 
     scrollT1
-      .to("body", {
-        backgroundColor: "#C0F0F5",
-        overwrite: "auto",
-        duration: 0.1,
-      })
+      .fromTo(
+        "body",
+        { backgroundColor: "#d9f99d" }, // Initial color
+        { backgroundColor: "#C0F0F5", overwrite: "auto", duration: 0.1 }, // Transition to new color
+      )
       .to(cloudsRef.current.position, { z: 0, duration: 0.3 }, 0)
       .to(canRef.current.position, {
         x: 0,
         y: 0,
         duration: 0.3,
         ease: "back.out(1.7)",
-      });
+      })
+      .to(
+        wordsRef.current.children.map((word) => word.position),
+        {
+          keyframes: [
+            { x: 0, y: 0, z: -1 },
+            { ...getXYPositions(-7), z: -7 },
+          ],
+          stagger: 0.3,
+        },
+        0,
+      )
+      // Make the can fly by and leave the scene after animation
+      .to(canRef.current.position, {
+        ...getXYPositions(4),
+        duration: 0.5,
+        ease: "back.in(1.7)",
+      })
+      .to(cloudsRef.current.position, { z: 7, duration: 0.5 });
   });
 
   return (
@@ -149,7 +167,10 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
           rotationIntensity={0}
           floatIntensity={3}
           floatSpeed={3}
-        />
+        >
+          {/* Add a tinted light inside the can to glow itself and the surrounding scene */}
+          <pointLight intensity={50} color="green" decay={0.6} />
+        </FloatingCan>
       </group>
 
       {/* Clouds */}
