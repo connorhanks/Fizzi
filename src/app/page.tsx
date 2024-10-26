@@ -7,6 +7,7 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import QuirkyHero from "@/components/QuirkyHero";
 import Hero from "@/app/index"; // Import the component from index.tsx
+import SkyDive from "@/slices/SkyDive";
 
 // This component renders your homepage.
 //
@@ -35,9 +36,8 @@ export default async function Index() {
 
   return (
     <div>
-      <Hero /> {/* Use the imported component */}
-      {/* <QuirkyHero title="Welcome to Quirky Soda!" /> */}
-      {/* <SliceZone slices={home.data.slices} components={components} /> */}
+      <Hero />
+      <SkyDive />
     </div>
   );
 }
