@@ -169,7 +169,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
           floatSpeed={3}
         >
           {/* Add a tinted light inside the can to glow itself and the surrounding scene */}
-          <pointLight intensity={50} color="green" decay={0.6} />
+          <pointLight intensity={60} color="#ffa49c" decay={0.6} />
         </FloatingCan>
       </group>
 
@@ -182,7 +182,7 @@ export default function Scene({ sentence, flavor }: SkyDiveProps) {
       {/* Text */}
       <group ref={wordsRef}>
         {/* Check if there is a sentence before attempting to render it */}
-        {sentence && <ThreeText sentence={sentence} color="#F97315" />}
+        {sentence && <ThreeText sentence={sentence} color="#a8453d" />}
       </group>
 
       {/* Lighting */}

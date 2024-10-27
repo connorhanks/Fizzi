@@ -8,6 +8,7 @@ import { components } from "@/slices";
 import QuirkyHero from "@/components/QuirkyHero";
 import Hero from "@/app/index"; // Import the component from index.tsx
 import SkyDive from "@/slices/SkyDive";
+import Carousel from "@/slices/Carousel";
 
 // This component renders your homepage.
 //
@@ -38,6 +39,7 @@ export default async function Index() {
     <div>
       <Hero />
       <SkyDive />
+      <Carousel />
     </div>
   );
 }

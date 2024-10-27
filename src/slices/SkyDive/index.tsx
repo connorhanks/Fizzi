@@ -12,7 +12,7 @@ const SkyDive = (): JSX.Element => {
     <Bounded className="skydive h-screen">
       <h2 className="sr-only">Slice.Primary.Sentence goes here</h2>
       <View className="h-screen w-screen">
-        <Scene sentence={"Dive into better health"} flavor={"watermelon"} />
+        <Scene sentence={"Dive into better health"} flavor={"blackCherry"} />
       </View>
     </Bounded>
   );
