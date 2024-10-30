@@ -23,10 +23,15 @@ This is an innovative landing page for a fizzy drink brand, leveraging React.js,
 ## <a name="features">🔋 Features</a>
 
 👉 **Engaging 3D Animations with GSAP**: Captivating animations that bring the fizzy drink to life, enhancing user engagement.
+
 👉 **Interactive 3D Bottle Rendering**: Explore the fizzy drink bottles from every angle with dynamic 3D rendering, showcasing different flavors and sizes.
+
 👉 **Bubble Animation Effects**: Realistic bubble animations that simulate the effervescence of the fizzy drink.
+
 👉 **Custom Flavor Carousel**: An interactive carousel showcasing different drink flavors, developed using GSAP for smooth transitions.
+
 👉 **Fully Responsive Design**: Ensures a consistent and optimal viewing experience across all devices and screen sizes.
+
 👉 **Performance Optimized**: Efficient code and asset management for fast loading times and smooth interactions.
 
 ## <a name="quick-start">🤸 Quick Start</a>
